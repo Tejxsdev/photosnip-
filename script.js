@@ -1,4 +1,4 @@
-const width = screen.width/4; 
+const width = screen.width/2; 
 let height = 0; 
 
 let streaming = false;
@@ -8,7 +8,7 @@ let video = null;
 function startup() {
   video = document.getElementById("video");
   navigator.mediaDevices
-    .getUserMedia({ video: true, audio: false })
+    .getUserMedia({ video: true, audio: false, facingMode: "user"})
     .then((stream) => {
       video.srcObject = stream;
       video.play();
